@@ -52,26 +52,25 @@
   <joint name="rotor_0_joint" type="continuous">
     <parent link="base_link"/>
     <child link="rotor_0"/>
-    <origin xyz="0.174 -0.174 0.06" rpy="0 0 0"/>
+    <origin xyz="0.174 -0.174 0.05" rpy="0 0 0"/>
     <!-- <origin xyz="0.153 -0.320 0.06" rpy="0 0 0"/> -->
     <axis xyz="0 0 1"/>
   </joint>
 
-  <link name="rotor_0_dummy">
+  <link name="rotor_0_bell">
     <visual>
-      <!-- <origin xyz="0.174 -0.174 0.06" rpy="0 0 0"/> -->
+      <!-- <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/> -->
       <geometry>
-        <mesh filename="package://px4_description/meshes/1345_prop_ccw_moved_origin.stl" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+        <mesh filename="package://px4_description/meshes/5010Bell.dae" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
       </geometry>
     </visual>
   </link>
-  <joint name="rotor_0_dummy_joint" type="continuous">
+  <joint name="rotor_0_bell_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="rotor_0_dummy"/>
-    <origin xyz="0.174 -0.174 0.06" rpy="0 0 1.57"/>
-    <!-- <origin xyz="0.153 -0.320 0.06" rpy="0 0 0"/> -->
-    <axis xyz="0 0 1"/>
+    <child link="rotor_0_bell"/>
+    <origin xyz="0.174 -0.174 0.03" rpy="0 0 0"/>
   </joint>
+
 
   <link name="rotor_1">
     <visual>
@@ -85,8 +84,22 @@
     <parent link="base_link"/>
     <child link="rotor_1"/>
     <!-- <origin xyz="-0.195 0.028 0.06" rpy="0 0 0"/> -->
-    <origin xyz="-0.174 0.174 0.06" rpy="0 0 0"/>
+    <origin xyz="-0.174 0.174 0.05" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_1_bell">
+    <visual>
+      <!-- <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Bell.dae" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_1_bell_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_1_bell"/>
+    <origin xyz="-0.174 0.174 0.03" rpy="0 0 0"/>
   </joint>
 
   <link name="rotor_2">
@@ -100,9 +113,23 @@
   <joint name="rotor_2_joint" type="continuous">
     <parent link="base_link"/>
     <child link="rotor_2"/>
-    <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/>
+    <origin xyz="0.174 0.174 0.05" rpy="0 0 0"/>
     <!-- <origin xyz="0.153 0.028 0.06" rpy="0 0 0"/> -->
     <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_2_bell">
+    <visual>
+      <!-- <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Bell.dae" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_2_bell_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_2_bell"/>
+    <origin xyz="0.174 0.174 0.03" rpy="0 0 0"/>
   </joint>
 
   <link name="rotor_3">
@@ -116,9 +143,23 @@
   <joint name="rotor_3_joint" type="continuous">
     <parent link="base_link"/>
     <child link="rotor_3"/>
-    <origin rpy="0 0 0" xyz="-0.174 -0.174 0.06"/>
+    <origin rpy="0 0 0" xyz="-0.174 -0.174 0.05"/>
     <!-- <origin xyz="-0.195 -0.320 0.06" rpy="0 0 0"/> -->
     <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_3_bell">
+    <visual>
+      <!-- <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Bell.dae" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_3_bell_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_3_bell"/>
+    <origin xyz="-0.174 -0.174 0.03" rpy="0 0 0"/>
   </joint>
 
 </robot>
