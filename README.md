@@ -70,7 +70,7 @@ source /opt/ros/humble/setup.bash
 colcon build
 ```
 
-At third point you are now ready to test the ROS2 nodes.
+At this point you are now ready to test the ROS2 nodes.
 ```
 # terminal 1
 cd ~/PX4-Autopilot
