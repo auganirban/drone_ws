@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<robot name="x500_base">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 3.141592654"/>
+      <geometry>
+        <mesh filename="package://px4_description/meshes/NXP-HGD-CF.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <!-- Additional visuals from SDF -->
+    <visual>
+      <origin xyz="0.174 0.174 .032" rpy="0 0 -.45"/>
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Base.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <visual>
+      <origin xyz="-0.174 0.174 .032" rpy="0 0 -.45"/>
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Base.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <visual>
+      <origin xyz="0.174 -0.174 .032" rpy="0 0 -.45"/>
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Base.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <visual>
+      <origin xyz="-0.174 -0.174 .032" rpy="0 0 -.45"/>
+      <geometry>
+        <mesh filename="package://px4_description/meshes/5010Base.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Rotors -->
+  <link name="rotor_0">
+    <visual>
+      <!-- <origin xyz="0.174 -0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/1345_prop_ccw_moved_origin.stl" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_0_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_0"/>
+    <origin xyz="0.174 -0.174 0.06" rpy="0 0 0"/>
+    <!-- <origin xyz="0.153 -0.320 0.06" rpy="0 0 0"/> -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_0_dummy">
+    <visual>
+      <!-- <origin xyz="0.174 -0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/1345_prop_ccw_moved_origin.stl" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_0_dummy_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_0_dummy"/>
+    <origin xyz="0.174 -0.174 0.06" rpy="0 0 1.57"/>
+    <!-- <origin xyz="0.153 -0.320 0.06" rpy="0 0 0"/> -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_1">
+    <visual>
+      <!-- <origin xyz="-0.174 0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/1345_prop_ccw_moved_origin.stl" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_1"/>
+    <!-- <origin xyz="-0.195 0.028 0.06" rpy="0 0 0"/> -->
+    <origin xyz="-0.174 0.174 0.06" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_2">
+    <visual>
+      <!-- <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/1345_prop_cw_moved_origin.stl" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_2"/>
+    <origin xyz="0.174 0.174 0.06" rpy="0 0 0"/>
+    <!-- <origin xyz="0.153 0.028 0.06" rpy="0 0 0"/> -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_3">
+    <visual>
+      <!-- <origin xyz="-0.174 -0.174 0.06" rpy="0 0 0"/> -->
+      <geometry>
+        <mesh filename="package://px4_description/meshes/1345_prop_cw_moved_origin.stl" scale="0.8461538461538461 0.8461538461538461 0.8461538461538461"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rotor_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_3"/>
+    <origin rpy="0 0 0" xyz="-0.174 -0.174 0.06"/>
+    <!-- <origin xyz="-0.195 -0.320 0.06" rpy="0 0 0"/> -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
